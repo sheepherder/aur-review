@@ -69,7 +69,7 @@ Liste unauffälliger Punkte.
 EOF
 	printf '<paket base="%s">\n' "$base"
 	echo "<aur_metadaten>"
-	curl -sfg "https://aur.archlinux.org/rpc/v5/info?arg[]=$name" || echo "AUR-Abfrage fehlgeschlagen"
+	curl -sf "https://aur.archlinux.org/rpc/v5/info/$name" || echo "AUR-Abfrage fehlgeschlagen"
 	echo "</aur_metadaten>"
 	echo "<git_log>"
 	git -C "$dir" log -n 30 --format='%h %ad %an <%ae> %s' --date=short
