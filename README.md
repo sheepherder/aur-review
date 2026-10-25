@@ -29,7 +29,7 @@ Ein Nein bei einem einzigen Paket bricht den ganzen yay-Lauf ab, weil `yay.abort
 
 ## Voraussetzungen
 
-Gebraucht werden yay ab Version 13.0.1, ein angemeldetes Claude Code (`claude`) sowie git und curl.
+Gebraucht werden yay ab Version 13.0.1 und ein angemeldetes Claude Code (`claude`).
 
 ## Installation
 
@@ -55,7 +55,7 @@ Claude sieht nur die Build-Dateien, nicht die heruntergeladenen Programme. Ob di
 
 Eine PKGBUILD kann Text enthalten, der das Modell täuschen soll. Weil Claude keine Werkzeuge hat, ist die schlimmste Folge eine falsche Bewertung. Deshalb fragt das Skript bei jedem Paket und nicht nur bei einer kritischen Bewertung.
 
-Nachbauten der AUR-Vorfälle vom Juli und Oktober 2026 hat es als „gefährlich" bewertet. Die Nachbauten folgen den Presseberichten; den echten Schadcode enthielten sie nicht. Steckt Schadcode im Quellarchiv des Projekts oder in einer heruntergeladenen Binärdatei, sieht Claude ihn nicht.
+Nachbauten der AUR-Vorfälle vom Juli und Oktober 2026 hat es als „gefährlich" bewertet. Die Nachbauten folgen den Presseberichten; den echten Schadcode enthielten sie nicht.
 
 Eine Bewertung dauerte in den Tests 15 bis 60 Sekunden. Bei mehreren AUR-Updates laufen die Bewertungen nacheinander. Jede Bewertung ist ein Aufruf über das eigene Claude-Konto, und die Dateien des AUR-Repos gehen dabei an Anthropic.
 
