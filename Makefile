@@ -36,7 +36,7 @@ install:
 # geändert, bleibt die Hook-Datei liegen. rm -f, damit uninstall auch nach
 # einer teilweisen Deinstallation durchläuft.
 uninstall:
-	[ ! -f $(INIT) ] || sed -i --follow-symlinks -e '\|^$(LINE1)$$|d' -e '\|^$(LINE2)$$|d' -e '\|^$(LINE3)$$|d' $(INIT)
-	@! grep -qs '^[[:space:]]*require.*hooks\.claude_review' $(INIT) || \
+	sed -i --follow-symlinks -e '\|^$(LINE1)$$|d' -e '\|^$(LINE2)$$|d' -e '\|^$(LINE3)$$|d' $(INIT)
+	@! grep -q '^[[:space:]]*require.*hooks\.claude_review' $(INIT) || \
 	  { echo "aur-review: $(INIT) enthält noch eine aktive require-Zeile für den Hook, Dateien nicht gelöscht"; exit 1; }
 	rm -f $(BIN) $(HOOK)
